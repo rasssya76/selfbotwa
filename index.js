@@ -179,8 +179,8 @@ try {
            
         //MESS
 		mess = {
-			wait: 'Otewe',
-			success: 'Berhasil!',
+			wait: '         *_Bentar_*           ',
+			success: 'SUCCES',
 			wrongFormat: 'Format salah, coba liat lagi di menu',
 			error: {
 			stick: 'bukan sticker itu:v',
@@ -490,49 +490,78 @@ switch (command) {
     case 'help':
     var p = '```'
     run = process.uptime() 
-const tod =`*_🍁RAMA JEBEシ︎🧡_*		    
-${p}👋${ucapanWaktu}kak ${pushname}${p}		    
-${p}🔑Prefix : ${prefix}${p}
-${p}⏳Bot Aktif Selama :
-${kyun(run)}${p}`
+const tod =`
+┌═══════════════
+║     ⬕•Sᴇʟғ Bᴏᴛᴢ︎•⬔
+╚─══════════════
+
+╭⎆──━──⊱⛦⊰──━──╮		    
+│⎘⃯⃗➢ ${p}👋${ucapanWaktu}kak ${pushname}${p}		    
+│⎘⃯⃗➢ ${p}🔑Prefix : ${prefix}${p}
+│⎘⃯⃗➢ ${p}⏳Aktif Selama :
+│⎘⃯⃗➢ ${kyun(run)}${p}
+╰⎆──━──⊱⛦⊰──━──╯
+`
  tod2 =`
-*_📋BOT MENU_*
-${p}🎈️${prefix}anime${p}
-${p}🍁${prefix}play <query>${p}
-${p}🔎${prefix}wiki <query>${p}
-${p}🍂${prefix}quotesharian${p}
-${p}💻${prefix}ytsearch <query>${p}
-${p}📥${prefix}ytmp3 <linknya>${p}
-${p}📥${prefix}ytmp4 <linknha>${p}
-${p}📥️${prefix}tiktokmp4 <link>${p}
-${p}📥️${prefix}tiktokmp3 <link>${p}
-${p}🖼️${prefix}pinterest <query>${p}
-${p}👻${prefix}sticker <replyimg>${p}
-${p}️💌${prefix}imgsearch <query>${p}
-${p}🎴${prefix}toimg <replysticker>${p}
-${p}🖇️️${prefix}tourl <replyimgnya>${p}
-${p}🛠️️${prefix}takestick <author|pack>${p}
+┌═══════════════
 
-*_🎮FUNTIME_*
-${p}🆚${prefix}truth${p}
-${p}🆚${prefix}dare${p}
-${p}🤖${prefix}simi <text>${p}
-${p}👑${prefix}ownermenu${p}
-*_ɪɴғᴏ ʙᴏᴛ_*
-» ᴛᴇʟғᴏɴ ʙᴏᴛ = ʙʟᴏᴄᴋ ᴘᴇʀᴍᴀᴍᴇɴ
-» ɢᴜɴᴀᴋᴀɴ ᴅᴇɴɢᴀɴ ʙᴀɪᴋ , ʙɪᴊᴀᴋ
+║   ⬕•ᴅᴀғTR ᴍᴇɴᴜ•⬔
 
-*_©ʀᴀᴍᴀʙᴏᴛs_*
+╚─══════════════
+
+┌══════❑
+║➢${p}🎈️${prefix}anime${p}
+║➢${p}🍁${prefix}play <query>${p}
+║➢${p}🔎${prefix}wiki <query>${p}
+║➢${p}🍂${prefix}quotesharian${p}
+║➢${p}💻${prefix}ytsearch <query>${p}
+║➢${p}📥${prefix}ytmp3 <linknya>${p}
+║➢${p}📥${prefix}ytmp4 <linknha>${p}
+║➢${p}📥️${prefix}tiktokmp4 <link>${p}
+║➢${p}📥️${prefix}tiktokmp3 <link>${p}
+║➢${p}🖼️${prefix}pinterest <query>${p}
+║➢${p}👻${prefix}sticker <replyimg>${p}
+║➢${p}️💌${prefix}imgsearch <query>${p}
+║➢${p}🎴${prefix}toimg <replysticker>${p}
+║➢${p}🖇️️${prefix}tourl <replyimgnya>${p}
+╚❑${p}🛠️️${prefix}takestick <author|pack>${p}
+
+┌═══════════════
+
+║      ⬕•ғᴜɴ•⬔
+
+╚─══════════════
+
+┌════════❑
+║➢${p}🆚${prefix}truth${p}
+║➢${p}🆚${prefix}dare${p}
+║➢${p}🤖${prefix}simi <text>${p}
+╚❑${p}👑${prefix}ownermenu${p}
+
+╔┅┅══ ᐃᐁᐃ ══┅┅═᳀
+║       ɪɴғᴏ
+╚┅┅══ ᐃᐁᐃ ══┅┅═᳀
+
+╔┅┅══ ᐃᐁᐃ ══┅┅═᳀
+║➤ ᴛᴇʟғᴏɴ ɢᴡ = ʙʟᴏᴄᴋ 
+║➤ ᴊᴀɴ ᴛᴏxɪᴅ ᴋᴏɴ
+╚┅┅══ ᐃᐁᐃ ══┅┅═᳀
 `           
            but = [
-          { buttonId: `${prefix}owner1`, buttonText: { displayText: '👑creator️' }, type: 1 },
-           { buttonId: `${prefix}usebot`, buttonText: { displayText: '⚙️how to use' }, type: 1 },
-          { buttonId: `${prefix}ruls`, buttonText: { displayText: '🤓rulesbot️' }, type: 1 }
+          { buttonId: `${prefix}owner1`, buttonText: { displayText: 'ᴄʀᴇᴀᴛᴏʀ️' }, type: 1 },
+           { buttonId: `${prefix}usebot`, buttonText: { displayText: 'ᴄᴀʀᴀ ᴘᴇɴɢᴜɴᴀᴀɴ' }, type: 1 },
+          { buttonId: `${prefix}ruls`, buttonText: { displayText: 'ʀᴜʟᴇs️' }, type: 1 }
                   ]
         sendButLocation(from, tod, tod2, gambar, but)
            break
         case 'ownermenu': case 'own':        
-        tekkk = `[ *OWNER MENU* ]
+        tekkk = `
+╭⎆──━──⊱⛦⊰──━──╮
+
+│    ✰•OWNER MENU•✰
+
+╰⎆──━──⊱⛦⊰──━──╯
+      
 > ${prefix}public
 > ${prefix}self
 > ${prefix}ping
@@ -560,10 +589,12 @@ const peb = {
            break 
             case 'ruls':
 txt = `
-*「 PERATURAN BOT 」*
+╭⎆──━──⊱⛦⊰──━──╮
+│  ✰•PERATURAN BOT•✰
+╰⎆──━──⊱⛦⊰──━──╯
 
-1. DILARANG TELFON BOT!!
-2. DILARANG SPAM BOT
+1. DILARANG TELFON 
+2. DILARANG SPAM 
 3. DILARANG BERKATA KASAR
 4. DILARANG SPAM VIRTEX
 5. DILARANG TELEFON OWNER
@@ -591,7 +622,9 @@ const pebz2 = {
            break 
                        case 'usebot':
 txt = `
-*「 HOW TO USE BOT 」*
+╭⎆──━──⊱⛦⊰──━──╮
+│  ✰•HOW TO USE BOT•✰
+╰⎆──━──⊱⛦⊰──━──╯
 
 1. PLEASE USE ${prefix} FOR COMMAND
 > Example: ${prefix}menu
@@ -627,20 +660,20 @@ const pebz3 = {
         const { thumb, title, filesizeF, filesize } = res
         const capti = `𝗬𝗢𝗨𝗧𝗨𝗕𝗘 𝗣𝗟𝗔𝗬🍁
 		     
-•💬 Judul : ${yut.all[0].title}
-•🎥 ID Video : ${yut.all[0].videoId}
-•⏰️ Diupload Pada : ${yut.all[0].ago}
-•👁️️ Views : ${yut.all[0].views}
-•▶️ Durasi : ${yut.all[0].timestamp}
-•👑 Channel : ${yut.all[0].author.name}
-•🔗 Link Channel : ${yut.all[0].author.url}`      
+•💬 Judul : _${yut.all[0].title}_
+•🎥 ID Video : _${yut.all[0].videoId}_
+•⏰️ Diupload Pada : _${yut.all[0].ago}_
+•👁️️ Views : _${yut.all[0].views}_
+•▶️ Durasi : _${yut.all[0].timestamp}_
+•👑 Channel : _${yut.all[0].author.name}_
+•🔗 Link Channel : _${yut.all[0].author.url}_`      
         ya = await getBuffer(thumb)
         py =await pebz.prepareMessage(from, ya, image)
         gbutsan = [{buttonId: `${prefix}ytmp3 ${yut.all[0].url}`, buttonText: {displayText: '🎵AUDIO'}, type: 1},{buttonId: `${prefix}ytmp4 ${yut.all[0].url}`, buttonText: {displayText: '🎥VIDEO'}, type: 1}]
         gbuttonan = {
         imageMessage: py.message.imageMessage,
         contentText: capti,
-        footerText: 'Silahkan Pilih Jenis File Dibawah Ini☕',
+        footerText: 'Silahkan Pilih Jenis File Dibawah Ini',
         buttons: gbutsan,
         headerType: 4
 }
@@ -1074,14 +1107,14 @@ result = `❒「  *Wiki*  」
          }
          vcard2 = 'BEGIN:VCARD\n'
          + 'VERSION:3.0\n'
-         + `FN:RamaJebe\n`
+         + `FN:RamaLOL\n`
          + `ORG: MimimBot ;\n`
-         + `TEL;type=CELL;type=VOICE;waid=62882003884827:62882003884827\n`
+         + `TEL;type=CELL;type=VOICE;waid=6281515589573:6281515589573\n`
          + 'END:VCARD'.trim()
          pebz.sendMessage(from, {displayName: `Creator Bot`, vcard: vcard2}, contact, 
          { quoted: fkontak, 
          })
-         reply('*_Jangan Lupa Subscrib_*\nhttps://youtube.com/c/FEBZABOTZ')
+         reply('*_Jangan Lupa Subscrib_*\nhttps://youtube.com/c/')
          break
           case 'bc':
          if (!isOwner) return reply('LU BUKAN OWNER GBLOK')
