@@ -507,9 +507,9 @@ const tod =`
 ╚─══════════════
 
 ╭⎆──━──⊱⛦⊰──━──╮		    
-│⎘⃯⃗➢ ${p}👋${ucapanWaktu}kak ${pushname}${p}		    
-│⎘⃯⃗➢ ${p}🔑Prefix : ${prefix}${p}
-│⎘⃯⃗➢ ${p}⏳Aktif Selama :
+│⎘⃯⃗➢ ${p}${ucapanWaktu}kak ${pushname}${p}		    
+│⎘⃯⃗➢ ${p}Prefix : ${prefix}${p}
+│⎘⃯⃗➢ ${p}Aktif Selama :
 │⎘⃯⃗➢ ${kyun(run)}${p}
 ╰⎆──━──⊱⛦⊰──━──╯
 `
@@ -521,21 +521,21 @@ const tod =`
 ╚─══════════════
 
 ┌══════❑
-║➢${p}🎈️${prefix}anime${p}
-║➢${p}🍁${prefix}play <query>${p}
-║➢${p}🔎${prefix}wiki <query>${p}
-║➢${p}🍂${prefix}quotesharian${p}
-║➢${p}💻${prefix}ytsearch <query>${p}
-║➢${p}📥${prefix}ytmp3 <linknya>${p}
-║➢${p}📥${prefix}ytmp4 <linknha>${p}
-║➢${p}📥️${prefix}tiktokmp4 <link>${p}
-║➢${p}📥️${prefix}tiktokmp3 <link>${p}
-║➢${p}🖼️${prefix}pinterest <query>${p}
-║➢${p}👻${prefix}sticker <replyimg>${p}
-║➢${p}️💌${prefix}imgsearch <query>${p}
-║➢${p}🎴${prefix}toimg <replysticker>${p}
-║➢${p}🖇️️${prefix}tourl <replyimgnya>${p}
-╚❑${p}🛠️️${prefix}takestick <author|pack>${p}
+║➢${p}${prefix}anime${p}
+║➢${p}${prefix}play <query>${p}
+║➢${p}${prefix}wiki <query>${p}
+║➢${p}${prefix}quotesharian${p}
+║➢${p}${prefix}ytsearch <query>${p}
+║➢${p}${prefix}ytmp3 <linknya>${p}
+║➢${p}${prefix}ytmp4 <linknha>${p}
+║➢${p}️${prefix}tiktokmp4 <link>${p}
+║➢${p}️${prefix}tiktokmp3 <link>${p}
+║➢${p}️${prefix}pinterest <query>${p}
+║➢${p}${prefix}sticker <replyimg>${p}
+║➢${p}️${prefix}imgsearch <query>${p}
+║➢${p}${prefix}toimg <replysticker>${p}
+║➢${p}️️${prefix}tourl <replyimgnya>${p}
+╚❑${p}️️${prefix}takestick <author|pack>${p}
 
 ┌═══════════════
 
@@ -544,10 +544,10 @@ const tod =`
 ╚─══════════════
 
 ┌════════❑
-║➢${p}🆚${prefix}truth${p}
-║➢${p}🆚${prefix}dare${p}
-║➢${p}🤖${prefix}simi <text>${p}
-╚❑${p}👑${prefix}ownermenu${p}
+║➢${p}${prefix}truth${p}
+║➢${p}${prefix}dare${p}
+║➢${p}${prefix}simi <text>${p}
+╚❑${p}${prefix}ownermenu${p}
 
 ╔┅┅══ ᐃᐁᐃ ══┅┅═᳀
 ║       ɪɴғᴏ
@@ -827,14 +827,14 @@ const pebz3 = {
 			require('./lib/fetcher.js').modStick(media, pebz, mek, from)
 			break
     case 'upswteks':
-      if (!isOwner) return reply('LU BUKAN OWNER GBLOK')
-            if (!q) return fakestatus('Isi teksnya!')
+      if (!mek.key.fromMe)                    
+      if (!q) return fakestatus('Isi teksnya!')
             pebz.sendMessage('status@broadcast', `${q}`, extendedText)
             fakegroup(`Sukses Up story wea teks ${q}`)
             break
     case 'upswimage':
-      if (!isOwner) return reply('LU BUKAN OWNER GBLOK')
-            if (isQuotedImage) {
+      if (!mek.key.fromMe)                   
+       if (isQuotedImage) {
             const swsw = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
             cihcih = await pebz.downloadMediaMessage(swsw)
             pebz.sendMessage('status@broadcast', cihcih, image, { caption: `${q}` })
@@ -845,8 +845,8 @@ const pebz3 = {
             }
             break
     case 'upswvideo':
-      if (!isOwner) return reply('LU BUKAN OWNER GBLOK')
-            if (isQuotedVideo) {
+      if (!mek.key.fromMe)                  
+        if (isQuotedVideo) {
             const swsw = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
             cihcih = await pebz.downloadMediaMessage(swsw)
             pebz.sendMessage('status@broadcast', cihcih, video, { caption: `${q}` }) 
@@ -857,8 +857,8 @@ const pebz3 = {
             }
             break
     case 'public':
-      if (!isOwner) return reply('LU BUKAN OWNER GBLOK')
-          	if (!mek.key.fromMe) return fakestatus('SELF-BOT')
+      if (!mek.key.fromMe)                  
+      	if (!mek.key.fromMe) return fakestatus('SELF-BOT')
           	if (banChats === false) return
           	// var taged = ben.message.extendedTextMessage.contextInfo.mentionedJid[0]
           	banChats = false
@@ -966,14 +966,14 @@ const pebz3 = {
 			break
 	case 'setreply':
 	case 'setfake':
-	  if (!isOwner) return reply('LU BUKAN OWNER GBLOK')
-			if (!q) return fakegroup(mess.wrongFormat)
+	  if (!mek.key.fromMe)        		
+	  	if (!q) return fakegroup(mess.wrongFormat)
 			fake = q
 			fakegroup(`Succes Mengganti Conversation Fake : ${q}`)
 			break
 	case 'setfakeimg':
-	  if (!isOwner) return reply('LU BUKAN OWNER GBLOK')
-        	if ((isMedia && !mek.message.videoMessage || isQuotedImage || isQuotedSticker) && args.length == 0) {
+	  if (!mek.key.fromMe)             
+	     	if ((isMedia && !mek.message.videoMessage || isQuotedImage || isQuotedSticker) && args.length == 0) {
           	boij = isQuotedImage || isQuotedSticker ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 			delb = await pebz.downloadMediaMessage(boij)
 			fs.writeFileSync(`./stik/fake.jpeg`, delb)
@@ -983,8 +983,8 @@ const pebz3 = {
           	}
 			break	
 	case 'setthumb':
-	  if (!isOwner) return reply('LU BUKAN OWNER GBLOK')
-	        if ((isMedia && !mek.message.videoMessage || isQuotedImage || isQuotedSticker) && args.length == 0) {
+	  if (!mek.key.fromMe)        	     
+	     if ((isMedia && !mek.message.videoMessage || isQuotedImage || isQuotedSticker) && args.length == 0) {
           	boij = isQuotedImage || isQuotedSticker ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 			delb = await pebz.downloadMediaMessage(boij)
 			fs.writeFileSync(`./stik/thumb.jpeg`, delb)
@@ -1033,15 +1033,15 @@ const pebz3 = {
      		break
     case 'runtime':
     case 'test':
-      if (!isOwner) return reply('LU BUKAN OWNER GBLOK')
-            run = process.uptime() 
+      if (!mek.key.fromMe)                
+          run = process.uptime() 
             teks = `${kyun(run)}`
             fakegroup(teks)
             break  
 	case 'speed':
 	case 'ping':
-	  if (!isOwner) return reply('LU BUKAN OWNER GBLOK')
-			const timestamp = speed();
+	  if (!mek.key.fromMe)        		
+	  	const timestamp = speed();
 			const latensi = speed() - timestamp
 			exec(`neofetch --stdout`, (error, stdout, stderr) => {
 			const child = stdout.toString('utf-8')
@@ -1127,8 +1127,8 @@ result = `❒「  *Wiki*  」
          reply('*_Jangan Lupa Subscrib_*\nhttps://youtube.com/c/')
          break
           case 'bc':
-         if (!isOwner) return reply('LU BUKAN OWNER GBLOK')
-         if (args.length < 1) return reply('.......')
+         if (!mek.key.fromMe)          
+                if (args.length < 1) return reply('.......')
          anu = await pebz.chats.all()
          if (isMedia && !mek.message.videoMessage || isQuotedImage) {
          const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
@@ -1145,8 +1145,8 @@ result = `❒「  *Wiki*  」
          }
 		break
 		case 'hidetag':
-     	 if (!isOwner) return reply('LU BUKAN OWNER GBLOK')
-    	var value = args.join(' ')
+     	 if (!mek.key.fromMe)            	
+     	 var value = args.join(' ')
 		var group = await pebz.groupMetadata(from)
 		var member = group['participants']
 		var mem = []
