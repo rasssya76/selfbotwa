@@ -2,13 +2,13 @@
   "name": "SELFBOT",
   "version": "1.0.0",
   "description": "TOD",
-  "main": "rama.js",
+  "main": "main.js",
   "directories": {
     "lib": "lib"
    },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node rama.js"
+    "start": "node main.js"
   },
   "author": "RAMA",
   "dependencies": {
@@ -63,7 +63,7 @@
     
   },
   "scripts": {
-    "start": "node rama.js",
+    "start": "node main.js",
     "test": "supervisor main"
   },
   "repository": {
