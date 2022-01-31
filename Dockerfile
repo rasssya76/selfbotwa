@@ -14,11 +14,11 @@ RUN apt-get update && \
 COPY package.json .
 RUN npm install 
 #RUN npm install @adiwajshing/baileys@3.5.2 
+#RUN npm install yt-search
 #RUN npm audit fix
 #RUN npm install -g npm-check-updates
 #RUN ncu --upgrade
 #RUN npm install libwebp
-#RUN npm i yt-search
 
 RUN mkdir /selfbot
 WORKDIR /selfbot
