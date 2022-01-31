@@ -38,7 +38,7 @@ const toMs = require('ms')
 const { error } = require("qrcode-terminal")
 const { getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom, banner, start, info, success, close } = require('./lib/function')
 const { color, bgcolor } = require('./lib/color')
-const { fetchJson, getBase64, kyun, createExif } = require('./lib/fetcher')
+const { fetchJson, getBase64, createExif } = require('./lib/fetcher')
 const _antilink = JSON.parse(fs.readFileSync('./lib/antilink.json'))
 
 const { yta, ytv, igdl, upload, formatDate } = require('./lib/ytdl')
@@ -313,6 +313,17 @@ try {
         const buttonMessages = { locationMessage: { jpegThumbnail: gam1 }, contentText: text1, footerText: desc1, buttons: but, headerType: 6 }
         return pebz.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
         }
+     function kyun(seconds) {
+	function pad(s) {
+		return (s < 10 ? '0' : '') + s;
+	}
+	var hours = Math.floor(seconds / (60 * 60));
+	var minutes = Math.floor(seconds % (60 * 60) / 60);
+	var seconds = Math.floor(seconds % 60);
+
+	//return pad(hours) + ':' + pad(minutes) + ':' + pad(seconds)
+	return `${pad(hours)}Jam ${pad(minutes)}Menit ${pad(seconds)}Detik`
+}
         
 //================================================================================//
            
@@ -854,7 +865,6 @@ const pebz3 = {
           	fakestatus(`「 *PUBLIC-MODE* 」`)
           	break
 	case 'self':
-	  if (!isOwner) return reply('LU BUKAN OWNER GBLOK')
           	if (!mek.key.fromMe) return fakestatus('SELF-BOT')
           	if (banChats === true) return
           	uptime = process.uptime()
