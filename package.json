@@ -63,7 +63,7 @@
     
   },
   "scripts": {
-    "start": "node index",
+    "start": "node rama.js",
     "test": "supervisor main"
   },
   "repository": {
