@@ -1039,9 +1039,8 @@ const pebz3 = {
             fakegroup(teks)
             break  
 	case 'speed':
-	case 'ping':
-	  if (!mek.key.fromMe)        		
-	  	const timestamp = speed();
+	case 'ping':   		
+	  	    const timestamp = speed();
 			const latensi = speed() - timestamp
 			exec(`neofetch --stdout`, (error, stdout, stderr) => {
 			const child = stdout.toString('utf-8')
