@@ -8,6 +8,9 @@ const {
 const fs = require('fs')
 const { banner, start, success } = require('./lib/function')
 const { color } = require('./lib/color')
+const sleep = async (ms) => {
+return new Promise(resolve => setTimeout(resolve, ms))
+}
 
 require('./index.js')
 nocache('./index.js', module => console.log(`${module} Telah Di Update✓`))
@@ -16,7 +19,7 @@ const starts = async (pebz = new WAConnection()) => {
     pebz.logger.level = 'warn'
     pebz.version = [2, 2143, 8]
     pebz.browserDescription = [ 'RamaCuy', 'Chrome', '3.0' ]
-    console.log(banner.string)
+    await sleep(10000)
     pebz.on('qr', () => {
         console.log(color('[','white'), color('!','red'), color(']','white'), color(' Scan bang'))
     })
