@@ -85,6 +85,29 @@ const time2 = moment().tz("Asia/Makassar").format("HH:mm:ss");
 //================================================================================//
 module.exports = pebz = async (pebz, mek) => {	
 
+async function starts() {
+				const pebz = new WAConnection()
+				pebz.version = [2, 2143, 3]  //jika ada update dari WhatsApp web silahkan ubah
+				pebz.logger.level = 'warn'
+				console.log(color(figlet.textSync('Self-Bot', {
+					font: 'Standard',
+					horizontalLayout: 'default',
+					vertivalLayout: 'default',
+					whitespaceBreak: false
+					}), 'skyblue'))
+				pebz.on('qr', () => {
+					console.log(color('[','white'), color('!','red'), color(']','white'), color('SCAN QR MASK 15 SECONDS '))
+					})
+			fs.existsSync(`./session.json`) && pebz.loadAuthInfo(`./settings/${session_name}`)
+			pebz.on('connecting', () => {
+				console.log('|\x1b[1;32m TRM \x1b[1;37m|', color('Connecting...', 'yellow'))
+				})
+			pebz.on('open', () => {
+				console.log('|\x1b[1;32m TRM \x1b[1;37m|', color('Connected', 'yellow'))
+			})
+			await pebz.connect({timeoutMs: 30*1000})
+			fs.writeFileSync(`./session.json`, JSON.stringify(pebz.base64EncodedAuthInfo(), null, '\t'))
+
 //+++ bug welcome nya
 
 /*pebz.on('group-participants-update', async (chat) => {
