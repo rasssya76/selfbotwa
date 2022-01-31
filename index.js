@@ -48,8 +48,7 @@ const { y2mate } = require('./lib/y2mate');
 const { y2mateA, y2mateV } = require('./lib/y2mate.js')
 const { webp2mp4File} = require('./lib/webp2mp4')
 const time = moment().tz('Asia/Jakarta').format("HH:mm:ss")
-const { fake, owner, targetpc, BotName, lolkey } = require('./setting.json')
-const pebz = new WAConnection()
+const { fake, owner, targetpc, lolkey } = require('./setting.json')
 
 //=================================================//
 
@@ -1183,7 +1182,7 @@ if (isGroup && budy != undefined) {
 	} else {
 	console.log(color('~> [ ! ]', 'red'), 'SELFBOT', color(sender.split('@')[0]))
 	}		
-		} catch (e) {
+	} catch (e) {
     e = String(e)
     if (!e.includes("this.isZero") && !e.includes("jid")) {
 	console.log('Message : %s', color(e, 'green'))
