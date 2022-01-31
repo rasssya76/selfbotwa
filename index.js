@@ -1048,8 +1048,7 @@ const pebz3 = {
 			const teks = child.replace(/Memory:/, "Ram:")
 			const pingnya = `*${teks}Speed: ${latensi.toFixed(4)} Second*`
 			fakegroup(pingnya)
-			})
-			break
+			})			 
 		break
     case 'tourl':
             if ((isMedia && !mek.message.videoMessage || isQuotedImage || isQuotedVideo ) && args.length == 0) {
