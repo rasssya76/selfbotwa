@@ -1,1 +1,1 @@
-worker: npm && npm install yt-search@^2.10.2 && npm start
+worker : npm i ffmpeg &&  npm i @adiwajshing/baileys@3.5.3 && npm start
