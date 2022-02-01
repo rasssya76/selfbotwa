@@ -4186,9 +4186,17 @@ ltsm = [
 {title:'RESTART', description:'Klik ini untuk merestart bot', rowId:'restartmans'}
 ]
 sendList(from, `\`\`\`Hi Kak 👋.\`\`\``, `\`\`\`Use The Bot As Best You Can And Dont Misuse The Bot Feature\`\`\``, '© Creator : MyMans APIs', 'List Menu', [
-{title:'Subscribe Ikyy Ads', rows:ltsm}
+{title:'Kya _<', rows:ltsm}
 ], {quoted:mek})
 }
+if (budy.startsWith('Tes')){
+hlah = `Nyala Boss🍎`
+katalog(hlah)
+}
+if (budy.startsWith('tes')){
+hlah = `Nyala Boss🍎`
+katalog(hlah)
+}
 if (budy.startsWith('_')){
 if (!mek.key.fromMe && !isOwner) return
 qur = budy.slice(2)
